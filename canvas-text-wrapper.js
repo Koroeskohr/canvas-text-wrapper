@@ -15,6 +15,8 @@
       justifyLines: false,
       paddingX: 0,
       paddingY: 0,
+      marginX: 0,
+      marginY: 0,
       fitParent: false,
       strokeText: false,
       renderHDPI: true,
@@ -258,7 +260,7 @@
     function drawText() {
       for (var i = 0; i < lines.length; i++) {
         textPos.y = parseInt(textPos.y) + lineHeight;
-        context.fillText(lines[i], textPos.x, textPos.y);
+        context.fillText(lines[i], textPos.x + opts.marginX, textPos.y + opts.marginY);
 
         if (opts.strokeText) {
           context.strokeText(lines[i], textPos.x, textPos.y);
